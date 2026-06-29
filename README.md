@@ -1,21 +1,26 @@
-# 🌐 Personal Portfolio
+# 🌐 Personal Portfolio Website
 
-A clean, responsive personal portfolio website built using **HTML** and **CSS** to showcase my professional profile, technical skills, education, internships, and contact information.
+A modern and responsive personal portfolio website showcasing my skills, internships, education, and experience as an aspiring Cloud & DevOps Engineer. This project is built using HTML and CSS and deployed on AWS S3 with Amazon CloudFront for secure and fast content delivery.
 
-## ✨ Overview
+## 🌍 Live Demo
 
-This portfolio serves as my online resume, highlighting my journey as a Computer Engineering student with an interest in **Cloud Computing, DevOps, and Web Development**. It features a modern, minimalist design with responsive layouts and a professional user experience.
+🔗 **https://d2gyjrvt1xmxxu.cloudfront.net**
 
-## 🚀 Features
+---
 
-* Elegant and responsive design
-* Professional introduction section
-* Work experience timeline
-* Education details
-* Technical skills showcase
-* Contact information
-* Mobile-friendly layout
-* Dark mode support using `prefers-color-scheme`
+## ✨ Features
+
+* Responsive and minimalistic design
+* Professional landing page
+* About Me section
+* Work Experience
+* Education
+* Technical Skills
+* Contact Information
+* Dark theme support
+* Hosted on AWS Cloud
+
+---
 
 ## 🛠️ Technologies Used
 
@@ -23,34 +28,67 @@ This portfolio serves as my online resume, highlighting my journey as a Computer
 * CSS3
 * Google Fonts
 * Tabler Icons
+* Amazon S3 (Static Website Hosting)
+* Amazon CloudFront (CDN & HTTPS)
 
-## 📂 Project Structure
+---
+
+## 📁 Project Structure
 
 portfolio/
-│── index.html
+├── index.html
 └── README.md
+---
 
-## 📈 Future Improvements
+## 🚀 Getting Started
 
-* Deploy the portfolio online
-* Add a Projects section
-* Download Resume button
-* Theme switcher (Light/Dark)
-* Contact form with email integration
-* Animations and smooth scrolling
+### Clone the repository
+
+git clone https://github.com/<your-username>/<repository-name>.git
+
+## ☁️ Deployment
+
+This portfolio is deployed using:
+
+* **Amazon S3** for static website hosting
+* **Amazon CloudFront** for HTTPS, caching, and global content delivery
+
+Whenever changes are made:
+
+1. Update the local files.
+2. Upload the updated files to the S3 bucket.
+3. Replace the existing files.
+4. Create a CloudFront invalidation (`/*`) to refresh the cache.
+
+---
+
+## 🚀 Future Improvements
+
+* Add a dedicated Projects section
+* Add a Download Resume button
+* Add GitHub profile link
+* Add Contact Form
+* Add smooth scrolling and animations
+* Connect a custom domain
+* Integrate Google Analytics
+
+---
 
 ## 👩‍💻 Author
 
 **Vaibhavi Y. Jagtap**
 
-Computer Engineering Student
-Aspiring Cloud & DevOps Engineer
+* 📧 Email: [vaibhavi.jagtap005@gmail.com](mailto:vaibhavi.jagtap005@gmail.com)
+* 💼 LinkedIn: https://linkedin.com/in/vaibhavi-jagtap
 
-## 📬 Contact
+---
 
-* Email: [vaibhavi.jagtap005@gmail.com](mailto:vaibhavi.jagtap005@gmail.com)
-* LinkedIn: https://linkedin.com/in/vaibhavi-jagtap
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
+
+---
 
 ## 📄 License
 
-This project is licensed for personal and educational use.
+This project is open for learning and personal reference.
