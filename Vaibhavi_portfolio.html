@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaibhavi Y. Jagtap — Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --text-primary: #0f3d3e;
+    --text-secondary: #4f6f6f;
+    --text-muted: #7a9a9c;
+    --surface-0: #f4fcfc;
+    --surface-1: #eaf7f7;
+    --surface-2: #ffffff;
+    --border: rgba(15,61,62,0.10);
+    --border-strong: rgba(15,61,62,0.18);
+    --accent: #14b8a6;
+    --accent-2: #0ea5e9;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: #ebfffe;
+      --text-secondary: #a5d8d6;
+      --text-muted: #78a6a7;
+      --surface-0: #071d1f;
+      --surface-1: #102c2f;
+      --surface-2: #153639;
+      --border: rgba(255,255,255,0.10);
+      --border-strong: rgba(255,255,255,0.18);
+      --accent: #2dd4bf;
+      --accent-2: #38bdf8;
+    }
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: var(--text-primary);
+    background: var(--surface-0);
+    min-height: 100vh;
+    padding: 0 1.5rem;
+  }
+
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 0 5rem; }
+
+  /* Nav */
+  .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 2.25rem 0 0; margin-bottom: 3.5rem; }
+  .initials {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 0.5px solid var(--border-strong);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 500; color: var(--text-secondary); letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+  }
+  .nav-links a:hover { color: var(--text-primary); }
+
+  /* Hero */
+  .hero { margin-bottom: 4rem; }
+  .status {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 12px; border-radius: 999px;
+    border: 0.5px solid var(--border); margin-bottom: 2rem;
+  }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent); }
+  .status-text { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-muted); }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px; font-weight: 400; line-height: 1.1;
+    letter-spacing: -0.01em; margin-bottom: 0.5rem;
+  }
+  .hero-name em { font-style: italic; color: var(--text-secondary); }
+  .hero-title { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.75rem; }
+  .hero-bio { font-size: 15px; line-height: 1.85; color: var(--text-secondary); max-width: 460px; margin-bottom: 2.25rem; }
+  .hero-ctas { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+  .cta-primary {
+    font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase;
+    padding: 10px 24px; border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--surface-2);
+    cursor: pointer; text-decoration: none; display: inline-block;
+    box-shadow: 0 10px 25px rgba(20, 184, 166, 0.22);
+  }
+  .cta-primary:hover { transform: translateY(-1px); opacity: 0.95; }
+  .cta-link {
+    font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--text-muted); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .cta-link:hover { color: var(--text-primary); }
+
+  /* Divider */
+  .rule { border: none; border-top: 0.5px solid var(--border); margin: 0 0 3rem; }
+
+  /* Two-col grid */
+  .grid-row { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; margin-bottom: 3rem; }
+  .col-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); padding-top: 3px; }
+
+  /* Experience */
+  .exp-entry { padding: 1.25rem 0; border-bottom: 0.5px solid var(--border); }
+  .exp-entry:first-child { padding-top: 0; }
+  .exp-entry:last-child { border-bottom: none; padding-bottom: 0; }
+  .exp-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; flex-wrap: wrap; gap: 4px; }
+  .exp-role { font-size: 15px; font-weight: 500; }
+  .exp-period { font-size: 12px; color: var(--text-muted); }
+  .exp-company { font-size: 12px; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 8px; }
+  .exp-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 10px; }
+  .exp-desc ul { padding-left: 1rem; }
+  .exp-desc li { margin-bottom: 5px; }
+
+  /* Education */
+  .edu-entry { padding: 1.25rem 0; border-bottom: 0.5px solid var(--border); }
+  .edu-entry:first-child { padding-top: 0; }
+  .edu-entry:last-child { border-bottom: none; padding-bottom: 0; }
+  .edu-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; flex-wrap: wrap; gap: 4px; }
+  .edu-degree { font-size: 14px; font-weight: 500; }
+  .edu-year { font-size: 12px; color: var(--text-muted); }
+  .edu-school { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+  .edu-note { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+  /* Chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    font-size: 11px; padding: 3px 10px; border-radius: 999px;
+    border: 0.5px solid var(--border); color: var(--text-muted);
+  }
+
+  /* Skills */
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-pill {
+    font-size: 12px; padding: 6px 14px; border-radius: 999px;
+    border: 0.5px solid var(--border); color: var(--text-secondary);
+  }
+
+  /* Contact */
+  .contact-entry {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 0; border-bottom: 0.5px solid var(--border);
+  }
+  .contact-entry:first-child { padding-top: 0; }
+  .contact-entry:last-child { border-bottom: none; padding-bottom: 0; }
+  .contact-type {
+    font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--text-muted); display: flex; align-items: center; gap: 8px;
+  }
+  .contact-type i { font-size: 15px; }
+  .contact-val { font-size: 13px; color: var(--text-secondary); }
+
+  /* Footer */
+  .footer {
+    margin-top: 3.5rem; padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-left { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-muted); }
+  .footer-right { font-size: 11px; color: var(--text-muted); }
+
+  /* Responsive */
+  @media (max-width: 520px) {
+    .hero-name { font-size: 34px; }
+    .grid-row { grid-template-columns: 1fr; gap: 0.75rem; }
+    .col-label { margin-bottom: 0.25rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top-bar">
+    <div class="initials">VJ</div>
+    <nav class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="status">
+      <div class="status-dot"></div>
+      <span class="status-text">Open to opportunities</span>
+    </div>
+    <div class="hero-name">Vaibhavi Jagtap<br><em>Aspiring Cloud Engineer.</em></div>
+    <div class="hero-title">B.E. Computer Engineering · CGPA 8.9 · Pune, India</div>
+    <p class="hero-bio">Computer Engineering student with a strong foundation in cloud computing, DevOps, and web development. Hands-on experience with CI/CD pipelines, Docker, and GitHub Actions. Passionate about building scalable, reliable systems.</p>
+    <div class="hero-ctas">
+      <a class="cta-primary" href="mailto:vaibhavi.jagtap005@gmail.com">Get in touch</a>
+      <a class="cta-link" href="https://linkedin.com/in/vaibhavi-jagtap" target="_blank">
+        <i class="ti ti-brand-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Experience -->
+  <div class="grid-row" id="experience">
+    <div class="col-label">Experience</div>
+    <div>
+      <div class="exp-entry">
+        <div class="exp-top">
+          <span class="exp-role">Cloud Computing &amp; DevOps Intern</span>
+          <span class="exp-period">Dec 2025 – Jan 2026</span>
+        </div>
+        <div class="exp-company">Maincrafts Technologies · Remote</div>
+        <div class="exp-desc">
+          <ul>
+            <li>Designed and implemented a CI/CD pipeline using GitHub Actions for a Dockerized web application, automating image builds and deployment to Docker Hub.</li>
+            <li>Applied DevOps best practices — containerization, deployment automation, and CI/CD workflows.</li>
+          </ul>
+        </div>
+        <div class="chips">
+          <span class="chip">Docker</span>
+          <span class="chip">GitHub Actions</span>
+          <span class="chip">CI/CD</span>
+        </div>
+      </div>
+      <div class="exp-entry">
+        <div class="exp-top">
+          <span class="exp-role">Web Development Intern</span>
+          <span class="exp-period">Jun 2023 – Jul 2023</span>
+        </div>
+        <div class="exp-company">Emirates Solution · Ratnagiri</div>
+        <div class="exp-desc">
+          <ul>
+            <li>Built responsive, user-friendly web pages using HTML, CSS, and JavaScript with optimal cross-device performance.</li>
+            <li>Integrated APIs, optimized site performance, and collaborated in Agile environments.</li>
+          </ul>
+        </div>
+        <div class="chips">
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">APIs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Education -->
+  <div class="grid-row" id="education">
+    <div class="col-label">Education</div>
+    <div>
+      <div class="edu-entry">
+        <div class="edu-top">
+          <span class="edu-degree">B.E. Computer Engineering</span>
+          <span class="edu-year">Expected Jul 2027</span>
+        </div>
+        <div class="edu-school">Sinhgad Institute of Technology, Lonavla</div>
+        <div class="edu-note">CGPA: 8.9 / 10 · Co-head of Documentation team at ACM Student Chapter</div>
+      </div>
+      <div class="edu-entry">
+        <div class="edu-top">
+          <span class="edu-degree">Diploma, Computer Engineering</span>
+          <span class="edu-year">Jul 2024</span>
+        </div>
+        <div class="edu-school">Government Polytechnic, Ratnagiri</div>
+        <div class="edu-note">CGPA: 8.63 / 10 · Final project: Grocery Mart — Online Grocery Shopping System</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Skills -->
+  <div class="grid-row">
+    <div class="col-label">Skills</div>
+    <div class="skills-wrap">
+      <span class="skill-pill">Docker</span>
+      <span class="skill-pill">Git</span>
+      <span class="skill-pill">GitHub Actions</span>
+      <span class="skill-pill">CI/CD</span>
+      <span class="skill-pill">Linux</span>
+      <span class="skill-pill">Python</span>
+      <span class="skill-pill">C / C++</span>
+      <span class="skill-pill">HTML</span>
+      <span class="skill-pill">CSS</span>
+      <span class="skill-pill">JavaScript</span>
+      <span class="skill-pill">MySQL</span>
+      <span class="skill-pill">SQL</span>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- Contact -->
+  <div class="grid-row" id="contact">
+    <div class="col-label">Contact</div>
+    <div>
+      <div class="contact-entry">
+        <span class="contact-type"><i class="ti ti-mail"></i> Email</span>
+        <span class="contact-val">vaibhavi.jagtap005@gmail.com</span>
+      </div>
+      <div class="contact-entry">
+        <span class="contact-type"><i class="ti ti-phone"></i> Phone</span>
+        <span class="contact-val">+91 93591 35562</span>
+      </div>
+      <div class="contact-entry">
+        <span class="contact-type"><i class="ti ti-brand-linkedin"></i> LinkedIn</span>
+        <span class="contact-val">linkedin.com/in/vaibhavi-jagtap</span>
+      </div>
+      <div class="contact-entry">
+        <span class="contact-type"><i class="ti ti-map-pin"></i> Location</span>
+        <span class="contact-val">Pune, Maharashtra, India</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="footer-left">Vaibhavi Y. Jagtap</span>
+    <span class="footer-right">2026</span>
+  </div>
+
+</div>
+</body>
+</html>
