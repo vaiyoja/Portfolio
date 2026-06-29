@@ -40,12 +40,6 @@ portfolio/
 └── README.md
 ---
 
-## 🚀 Getting Started
-
-### Clone the repository
-
-git clone https://github.com/<your-username>/<repository-name>.git
-
 ## ☁️ Deployment
 
 This portfolio is deployed using:
